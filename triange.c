@@ -1,3 +1,12 @@
+/**
+Program to print this : 
+     *
+    ***
+   *****
+  *******
+ *********
+***********
+**/
 #include <stdio.h>
 
 void main(){
