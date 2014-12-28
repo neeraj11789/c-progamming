@@ -52,6 +52,8 @@ void insertLastOther(struct node **head_ref, int new_data){
 	// If the list is empty
 	if(*head_ref == NULL){
 		*head_ref = new_node;
+		//Return is Very Important Here
+		return;
 	}
 
 	while(last_node->next!=NULL){
