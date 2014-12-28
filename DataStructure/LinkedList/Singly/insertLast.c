@@ -42,6 +42,25 @@ void insertLast(struct node *head, int new_data){
 	last_node->next = new_node;
 }
 
+void insertLastOther(struct node **head_ref, int new_data){
+	struct node *new_node = (struct node*) malloc(sizeof(struct node));
+	struct node *last_node = *head_ref; 
+
+	new_node->value = new_data;
+	new_node->next = NULL;
+
+	// If the list is empty
+	if(*head_ref == NULL){
+		*head_ref = new_node;
+	}
+
+	while(last_node->next!=NULL){
+		last_node = last_node->next;		
+	}
+	// Update the last node's next pointer
+	last_node->next = new_node;
+}
+
 void printLinkedList(struct node *n){
 	while(n!=NULL){
 		printf("%d->", n->value);
@@ -64,6 +83,9 @@ void main(){
 	insertLast(HEAD, 10);
 	insertLast(HEAD, 20);
 	insertLast(HEAD, 30);
+	insertLastOther(&HEAD, 70);
+	insertLastOther(&HEAD, 90);
+	insertLastOther(&HEAD, 80);
 	// Print the List
 	printLinkedList(HEAD);
 }
